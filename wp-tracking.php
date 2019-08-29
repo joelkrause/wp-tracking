@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Tracking
+ * Plugin Name: Add Tracking Tags
  * Plugin URI:  https://jkrs.me
  * Description: Gives you the ability to Add tracking scripts to your head &amp; footer
  * Version:     1.0.0

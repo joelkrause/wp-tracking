@@ -22,7 +22,6 @@
                 {
                     indentUnit: 2,
                     tabSize: 2,
-                    // mode: 'javascript',
                 }
             );
             var editor = wp.codeEditor.initialize($('#wp_track_head'), editorSettings);
@@ -36,7 +35,6 @@
                 {
                     indentUnit: 2,
                     tabSize: 2,
-                    // mode: 'css',
                 }
             );
             var editor = wp.codeEditor.initialize($('#wp_track_after_body'), editorSettings);

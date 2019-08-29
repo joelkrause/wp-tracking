@@ -4,7 +4,7 @@ add_action( 'admin_init', 'wp_tracking_settings_init' );
 
 
 function wp_tracking_add_admin_menu(  ) { 
-	add_menu_page( 'WP Tracking', 'WP Tracking', 'manage_options', 'wp_tracking', 'wp_tracking_options_page' );
+	add_menu_page( 'Tracking Tags', 'Tracking Tags', 'manage_options', 'wp_tracking', 'wp_tracking_options_page' );
 }
 
 
@@ -47,45 +47,34 @@ function wp_tracking_settings_init(  ) {
 
 
 function wp_tracking_before_body_render(  ) { 
-
 	$options = get_option( 'wp_tracking_settings' );
 	?>
-	<textarea id="wp_track_before_body" cols='40' rows='5' name='wp_tracking_settings[wp_tracking_before_body]'> 
-		<?php echo $options['wp_tracking_before_body']; ?>
- 	</textarea>
+	<textarea id="wp_track_before_body" name='wp_tracking_settings[wp_tracking_before_body]'><?php echo $options['wp_tracking_before_body']; ?></textarea>
 	<?php
 
 }
 
 
 function wp_tracking_head_render(  ) { 
-
 	$options = get_option( 'wp_tracking_settings' );
 	?>
-	<textarea id="wp_track_head" cols='40' rows='5' name='wp_tracking_settings[wp_tracking_head]'> 
-		<?php echo $options['wp_tracking_head']; ?>
- 	</textarea>
+	<textarea id="wp_track_head" name='wp_tracking_settings[wp_tracking_head]'><?php echo $options['wp_tracking_head']; ?></textarea>
 	<?php
 
 }
 
 
 function wp_tracking_after_body_render(  ) { 
-
 	$options = get_option( 'wp_tracking_settings' );
 	?>
-	<textarea id="wp_track_after_body" cols='40' rows='5' name='wp_tracking_settings[wp_tracking_after_body]'> 
-		<?php echo $options['wp_tracking_after_body']; ?>
- 	</textarea>
+	<textarea id="wp_track_after_body" name='wp_tracking_settings[wp_tracking_after_body]'><?php echo $options['wp_tracking_after_body']; ?></textarea>
 	<?php
 
 }
 
 
 function wp_tracking_settings_section_callback(  ) { 
-
-	echo __( '', 'wp-tracking' );
-
+	echo __( 'The After Body Tags code snippet needs the <code>wp_body_open()</code> hook added to the header.php file of the theme. Without this, the snippet won\'t be added!', 'wp-tracking' );
 }
 
 
@@ -94,7 +83,7 @@ function wp_tracking_options_page(  ) {
 		?>
 		<form action='options.php' method='post'>
 
-			<h1>WP Tracking</h1>
+			<h1>Tracking Tags</h1>
 
 			<?php
 			settings_fields( 'pluginPage' );
